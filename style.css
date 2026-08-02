@@ -1293,6 +1293,14 @@ textarea.form-input {
     .menu-toggle {
         display: block;
     }
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
     .section-header h2 {
         font-size: 2rem;
     }
