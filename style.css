@@ -1265,7 +1265,30 @@ textarea.form-input {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Add menu dynamic overlay later */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-secondary);
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        gap: 15px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .nav-links .btn {
+        max-width: 200px;
+        margin: 0 auto;
     }
     .menu-toggle {
         display: block;
@@ -1278,6 +1301,16 @@ textarea.form-input {
     }
     .aplus-grid-module {
         grid-template-columns: 1fr;
+    }
+    .floating-badge {
+        display: none !important;
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .slider-showcase {
+        max-width: 500px;
+        margin: 30px auto 0 auto;
     }
 }
 
