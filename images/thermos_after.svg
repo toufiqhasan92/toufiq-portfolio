@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Premium Backdrop Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2c303b"/>
+      <stop offset="100%" stop-color="#0a0b0d"/>
+    </radialGradient>
+    
+    <!-- Bottle Material Gradient (Deep Matte Black) -->
+    <linearGradient id="matteBlack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="30%" stop-color="#2d2d2d"/>
+      <stop offset="70%" stop-color="#151515"/>
+      <stop offset="100%" stop-color="#0b0b0b"/>
+    </linearGradient>
+    
+    <!-- Gold / Orange Brand Gradient -->
+    <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb74d"/>
+      <stop offset="50%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#e67e00"/>
+    </linearGradient>
+
+    <!-- Metal Trim Highlights -->
+    <linearGradient id="chromeTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#95a5a6"/>
+      <stop offset="30%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#bdc3c7"/>
+      <stop offset="100%" stop-color="#7f8c8d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGlow)"/>
+
+  <!-- Ambient light glows behind the product -->
+  <circle cx="400" cy="250" r="220" fill="url(#goldAcc)" opacity="0.1" filter="blur(50px)"/>
+
+  <!-- Studio softbox reflections -->
+  <path d="M 0,0 L 250,0 L 0,500 Z" fill="#ffffff" opacity="0.02"/>
+  <path d="M 800,500 L 550,500 L 800,0 Z" fill="url(#goldAcc)" opacity="0.02"/>
+
+  <!-- Premium Contact Shadow -->
+  <ellipse cx="400" cy="430" rx="90" ry="15" fill="#000000" opacity="0.6"/>
+  <ellipse cx="400" cy="430" rx="40" ry="8" fill="#000000" opacity="0.8"/>
+
+  <!-- Optimized Bottle Vector -->
+  <g transform="translate(350, 80)">
+    <!-- Stainless Loop handle cap -->
+    <path d="M 25 15 C 25 -5, 75 -5, 75 15 L 68 15 C 68 0, 32 0, 32 15 Z" fill="url(#chromeTrim)"/>
+    <rect x="25" y="15" width="50" height="20" rx="2" fill="url(#matteBlack)"/>
+    <!-- Gold Accent Ring -->
+    <rect x="25" y="32" width="50" height="4" fill="url(#goldAcc)"/>
+    
+    <!-- Chrome Neck Ring -->
+    <rect x="20" y="36" width="60" height="15" fill="url(#chromeTrim)"/>
+    
+    <!-- Main Bottle Body -->
+    <rect x="5" y="51" width="90" height="290" rx="14" fill="url(#matteBlack)"/>
+    <!-- Brushed metal base -->
+    <path d="M 5 320 L 95 320 L 95 330 C 95 336, 5 336, 5 330 Z" fill="url(#chromeTrim)"/>
+
+    <!-- High-end lighting reflections on bottle body -->
+    <rect x="12" y="60" width="8" height="255" rx="4" fill="#ffffff" opacity="0.15"/>
+    <rect x="80" y="60" width="4" height="255" rx="2" fill="url(#goldAcc)" opacity="0.2"/>
+
+    <!-- Premium engraved Logo on flask -->
+    <circle cx="50" cy="140" r="16" fill="none" stroke="url(#goldAcc)" stroke-width="1.5"/>
+    <polygon points="50,130 55,145 45,145" fill="url(#goldAcc)"/>
+    <text x="50" y="172" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">
+      AURA
+    </text>
+  </g>
+
+  <!-- Infographic Elements & Feature Callouts -->
+  <!-- Callout 1: Top Left -->
+  <g transform="translate(80, 110)">
+    <line x1="160" y1="50" x2="280" y2="20" stroke="url(#goldAcc)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <circle cx="280" cy="20" r="4" fill="#ff9900"/>
+    <rect width="180" height="64" rx="8" fill="rgba(18, 20, 24, 0.85)" stroke="url(#goldAcc)" stroke-width="1"/>
+    <text x="15" y="25" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#ff9900">THERMALOCK LID</text>
+    <text x="15" y="45" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">100% Leak-Proof Lock Cap</text>
+  </g>
+
+  <!-- Callout 2: Bottom Left -->
+  <g transform="translate(80, 290)">
+    <line x1="160" y1="20" x2="280" y2="60" stroke="url(#goldAcc)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <circle cx="280" cy="60" r="4" fill="#ff9900"/>
+    <rect width="180" height="64" rx="8" fill="rgba(18, 20, 24, 0.85)" stroke="url(#goldAcc)" stroke-width="1"/>
+    <text x="15" y="25" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#ff9900">DOUBLE-WALL VACUUM</text>
+    <text x="15" y="45" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">Eliminates Outer Condensation</text>
+  </g>
+
+  <!-- Callout 3: Right Side (Highlight Badge) -->
+  <g transform="translate(540, 180)">
+    <circle cx="45" cy="45" r="45" fill="url(#goldAcc)" opacity="0.15"/>
+    <circle cx="45" cy="45" r="40" fill="none" stroke="url(#goldAcc)" stroke-width="2" stroke-dasharray="4 2"/>
+    
+    <text x="45" y="38" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">24 HRS</text>
+    <text x="45" y="55" font-family="'Outfit', sans-serif" font-size="12" font-weight="700" fill="#ff9900" text-anchor="middle">ICE COLD</text>
+    
+    <!-- Small label below -->
+    <rect x="-10" y="105" width="110" height="24" rx="12" fill="rgba(255,153,0,0.1)"/>
+    <text x="45" y="120" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#ff9900" text-anchor="middle">BPA FREE STEEL</text>
+  </g>
+
+  <!-- Premium Overlay Stamp -->
+  <rect x="30" y="30" width="120" height="28" rx="6" fill="#10b981"/>
+  <text x="90" y="48" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">
+    HIGH-CONVERTING
+  </text>
+</svg>

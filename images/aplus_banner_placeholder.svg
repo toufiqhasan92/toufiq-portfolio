@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#goldGrad)"/>
+  
+  <!-- Abstract Design Wave/Shapes -->
+  <path d="M 0 120 Q 300 280 600 100 T 970 200 L 970 300 L 0 300 Z" fill="rgba(255, 153, 0, 0.05)"/>
+  <path d="M 0 80 Q 250 50 500 220 T 970 90" fill="none" stroke="url(#accentGrad)" stroke-width="3" opacity="0.3"/>
+
+  <!-- Logo and Brand -->
+  <g transform="translate(485, 90)">
+    <!-- Shield / Premium Icon -->
+    <path d="M -24 -24 L 24 -24 L 24 0 Q 24 24 0 40 Q -24 24 -24 0 Z" fill="none" stroke="#ff9900" stroke-width="2.5" opacity="0.8"/>
+    <path d="M -12 -12 L 12 -12 L 12 0 Q 12 12 0 20 Q -12 12 -12 0 Z" fill="#ff9900" opacity="0.5"/>
+  </g>
+
+  <!-- Typography Labels -->
+  <text x="485" y="185" font-family="'Outfit', 'Inter', sans-serif" font-size="28" font-weight="800" fill="#f3f4f6" text-anchor="middle" letter-spacing="3">
+    A+ CONTENT PREMIUM BANNER
+  </text>
+  
+  <text x="485" y="220" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#9ca3af" text-anchor="middle" letter-spacing="1">
+    970 x 300 Standard Header Module • Designed for High CTR
+  </text>
+  
+  <rect x="425" y="245" width="120" height="24" rx="12" fill="rgba(255, 153, 0, 0.1)" stroke="rgba(255, 153, 0, 0.3)" stroke-width="1"/>
+  <text x="485" y="260" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" fill="#ff9900" text-anchor="middle" letter-spacing="1">
+    BRAND STORYCASE
+  </text>
+</svg>

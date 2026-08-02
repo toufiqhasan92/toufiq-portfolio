@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Listing Design Blog - Toufiq Creative</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-container {
+            max-width: 1000px;
+            margin: 120px auto 60px auto;
+            padding: 20px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .blog-card {
+            padding: 25px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .blog-card-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: var(--bg-secondary);
+        }
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.08);
+        }
+        .blog-meta-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        .blog-card h3 {
+            font-size: 1.3rem;
+            margin-top: 15px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+        .back-btn:hover {
+            color: var(--accent);
+        }
+        .article-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+        .article-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            position: relative;
+        }
+        .article-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            background: var(--bg-secondary);
+        }
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .close-article {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-article:hover {
+            color: var(--accent);
+        }
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        .article-body p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .article-body ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+        .article-body li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .article-image {
+                height: 200px;
+            }
+            .article-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar" id="main-nav">
+        <div class="container">
+            <a href="index.html" class="logo" id="nav-logo">
+                <span>Toufiq</span> Creative
+            </a>
+            <a href="index.html" class="btn btn-secondary">Back to Site</a>
+        </div>
+    </header>
+
+    <div class="blog-container">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+        
+        <div class="section-header" style="text-align: left; margin-bottom: 40px; padding: 0;">
+            <span class="tag">Knowledge Hub</span>
+            <h1 class="text-gradient" style="font-size: 2.8rem; margin-bottom: 15px;">Amazon Design Insights</h1>
+            <p>Expert guides, case study analyses, and advanced strategy recommendations to help Amazon sellers maximize CTR and conversion rates.</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Article 1 Card -->
+            <div class="glass-card blog-card" onclick="openArticle('article-1')">
+                <div>
+                    <div class="blog-card-image">
+                        <img src="images/gluta_after.jpg.jpg" alt="Amazon Listing CTR Tips">
+                    </div>
+                    <div class="blog-meta-info">
+                        <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> July 28, 2026</span>
+                        <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 5 min read</span>
+                    </div>
+                    <h3>5 Critical Mistakes to Avoid on Your Amazon Listing Images</h3>
+                    <p>Discover why most Amazon sellers fail to convert traffic into sales and how visual psychology can double your click-through rate.</p>
+                </div>
+                <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Full Guide <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Article 2 Card -->
+            <div class="glass-card blog-card" onclick="openArticle('article-2')">
+                <div>
+                    <div class="blog-card-image">
+                        <img src="images/oasis_after.jpg.jpg" alt="A+ Content Layouts">
+                    </div>
+                    <div class="blog-meta-info">
+                        <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> July 15, 2026</span>
+                        <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 8 min read</span>
+                    </div>
+                    <h3>The Power of A+ Content: How to Build Trust and Lower Returns</h3>
+                    <p>Learn how to use comparison tables, cross-selling modules, and realistic 3D renderings to answer customer objections before they buy.</p>
+                </div>
+                <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Full Guide <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Article 3 Card -->
+            <div class="glass-card blog-card" onclick="openArticle('article-3')">
+                <div>
+                    <div class="blog-card-image">
+                        <img src="images/hero_after.jpg.jpeg" alt="Midjourney AI Renders">
+                    </div>
+                    <div class="blog-meta-info">
+                        <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> June 30, 2026</span>
+                        <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 6 min read</span>
+                    </div>
+                    <h3>AI + Photoshop: The Future of Amazon Lifestyle Renders</h3>
+                    <p>Traditional product photography is expensive and slow. Learn how we combine advanced AI generation with manual Photoshop editing to deliver premium visuals.</p>
+                </div>
+                <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Full Guide <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 1 Modal -->
+    <div class="article-modal" id="article-1">
+        <div class="glass-card article-content">
+            <button class="close-article" onclick="closeArticle('article-1')">&times;</button>
+            <div class="blog-meta-info" style="margin-bottom: 20px;">
+                <span class="tag">Conversion Rate Optimization</span>
+                <span style="color: var(--text-secondary);">July 28, 2026 &bull; 5 min read</span>
+            </div>
+            <h1 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">5 Critical Mistakes to Avoid on Your Amazon Listing Images</h1>
+            
+            <div class="article-image">
+                <img src="images/gluta_after.jpg.jpg" alt="Amazon Listing CTR Tips">
+            </div>
+
+            <div class="article-body">
+                <p>Amazon is a highly visual marketplace. When a customer searches for a product, they don't read bullet points or descriptions first—they look at your images. In fact, mobile shoppers often make a purchase decision purely based on the main image and listing graphics. Yet, 90% of private label sellers make visual design mistakes that cost them thousands of dollars in lost conversions. Here are the 5 most critical mistakes and how to fix them:</p>
+
+                <h3>1. Hard-to-Read Text on Mobile</h3>
+                <p>Over 70% of Amazon buyers shop using the mobile app. Many designers place long paragraphs or tiny text labels on listing images. On mobile screens, this text becomes unreadable, prompting users to swipe away. Keep text short, punchy, and use a minimum of 24pt bold sans-serif fonts.</p>
+
+                <h3>2. Focusing on Features Instead of Benefits</h3>
+                <p>A feature is what your product *has*; a benefit is what your product *does* for the customer. For example, instead of just labeling "2.4L Water Capacity", show a graphic explaining: "Fills 10 Standard Glasses - Keeps Your Family Hydrated All Day." Speak directly to the buyer's needs and pain points.</p>
+
+                <h3>3. Poor Competitor Comparison Charts</h3>
+                <p>If you include a comparison chart, don't make it look biased or generic. Avoid simple red X's and green checkmarks. Use text and concrete details to show exactly where your product outperforms competitors (e.g., "100% Paraffin-Free Wax" vs "Synthetic Paraffin Mixture").</p>
+
+                <h3>4. Boring Main/Hero Images</h3>
+                <p>The main image is responsible for your Click-Through Rate (CTR). It must have clean packaging, perfect lighting, and take up at least 85% of the frame. Ensure the product angle shows depth (three-quarter views are usually best) rather than a flat front-facing view.</p>
+
+                <h3>5. Inconsistent Brand Style</h3>
+                <p>Using different fonts, color themes, and lighting setups across your listing images looks unprofessional and reduces brand trust. Establish a clear styling system—like Sombra's soothing warm botanical theme or Amer-Ice's patriotic red and blue colors—and keep it unified.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 2 Modal -->
+    <div class="article-modal" id="article-2">
+        <div class="glass-card article-content">
+            <button class="close-article" onclick="closeArticle('article-2')">&times;</button>
+            <div class="blog-meta-info" style="margin-bottom: 20px;">
+                <span class="tag">A+ Content Strategy</span>
+                <span style="color: var(--text-secondary);">July 15, 2026 &bull; 8 min read</span>
+            </div>
+            <h1 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">The Power of A+ Content: How to Build Trust and Lower Returns</h1>
+            
+            <div class="article-image">
+                <img src="images/oasis_after.jpg.jpg" alt="A+ Content Layouts">
+            </div>
+
+            <div class="article-body">
+                <p>Amazon A+ Content (formerly Enhanced Brand Content or EBC) is one of the most powerful tools available to brand-registered sellers. Placed right under the product description, A+ content uses rich modular layout banners, comparison charts, and brand stories to engage shoppers. When designed strategically, A+ content can increase conversion rates by up to 20% and significantly lower return rates. Let's look at how to layout A+ modules for maximum impact:</p>
+
+                <h3>1. Address Friction Points Early</h3>
+                <p>Before a customer buys your product, they have questions and doubts. Use A+ modules to address these doubts visually. For example, if you sell a granulated sand candle, use a custom graphic module to show step-by-step how to pour the wax, insert the wick, and burn it safely without making a mess.</p>
+
+                <h3>2. Deploy a Brand Comparison Table</h3>
+                <p>The standard product comparison table module is the highest-converting element in A+ content. It allows you to cross-promote other products in your catalog, helping customers find the exact variant they need and increasing your average basket size. It also acts as an excellent barrier to keep customers on your listings rather than clicking on sponsored competitor ads.</p>
+
+                <h3>3. Mix Modular Banners with Close-up Renders</h3>
+                <p>Don't just upload blocks of text. Design wide, full-width headers (970x600 px) that create a cinematic brand presence. Zoom in on unique product textures—like the clean botanical ingredients in Moringa Bitters or the silicone weave of Slecon gun cleaning cloths. Show quality up close to build customer confidence.</p>
+
+                <h3>4. Build for Mobile Responsiveness</h3>
+                <p>Amazon automatically rescales A+ content modules for mobile screens. Ensure your text layouts are centered, spacing is optimized, and background graphics don't crop out important features when viewed on small mobile displays. Keep A+ text segments descriptive and distinct from the image assets to support Amazon SEO indexation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 3 Modal -->
+    <div class="article-modal" id="article-3">
+        <div class="glass-card article-content">
+            <button class="close-article" onclick="closeArticle('article-3')">&times;</button>
+            <div class="blog-meta-info" style="margin-bottom: 20px;">
+                <span class="tag">AI Visual Production</span>
+                <span style="color: var(--text-secondary);">June 30, 2026 &bull; 6 min read</span>
+            </div>
+            <h1 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">AI + Photoshop: The Future of Amazon Lifestyle Renders</h1>
+            
+            <div class="article-image">
+                <img src="images/hero_after.jpg.jpeg" alt="Midjourney AI Renders">
+            </div>
+
+            <div class="article-body">
+                <p>As an Amazon seller, your biggest marketing expense is often product photography. Hiring a local studio, finding models, preparing sets, and waiting for the right weather conditions can take weeks and cost between $1,000 to $3,000 per project. Fortunately, next-generation AI tools like Midjourney, Flux, and Photoshop Generative Fill have completely revolutionized this workflow. Here is how we combine AI and manual photo-editing to deliver studio-quality renders at a fraction of the time and cost:</p>
+
+                <h3>The Problem with Raw AI Output</h3>
+                <p>While AI can generate stunning images, it is notorious for being inaccurate with product packaging. If you ask an AI to generate "a blue bottle of Colsigen Mist spray on a marble bathroom vanity", the bottle will look fake, the text will be gibberish, and the dimensions will be distorted. To stand out and comply with Amazon rules, you cannot use raw AI-generated bottles.</p>
+
+                <h3>The Synthesis: AI Background + Photoshop Precision</h3>
+                <p>Our hybrid design workflow solves this problem in three precise phases:</p>
+                <ul>
+                    <li><strong>Step 1: High-End Background Generation:</strong> We use Midjourney or Flux to prompt ultra-realistic, lighting-perfect background scenes matching your brand aesthetic (e.g. natural warm cedarwood backdrop, modern luxury spa marble counters).</li>
+                    <li><strong>Step 2: Photoshop Precision Integration:</strong> We manually extract your physical product package from a high-resolution flat photo or CAD rendering. Using Photoshop tools, we place it into the AI-generated background scene.</li>
+                    <li><strong>Step 3: Realistic Lighting & Shadows:</strong> We draw custom reflections, match the background light direction, generate accurate ground contact shadows, and perform high-end color grading to make the product blend 100% realistically.</li>
+                </ul>
+
+                <h3>Why This Workflow Wins</h3>
+                <p>This workflow enables us to deliver:
+                    <ul>
+                        <li><strong>Unlimited Settings:</strong> We can place your product in a kitchen, gym, log cabin, or sandy beach within minutes.</li>
+                        <li><strong>Fast A/B Testing:</strong> We can swap backgrounds easily to test which environment converts best for your buyers.</li>
+                        <li><strong>Budget-Friendly Renders:</strong> We eliminate expensive photography rentals and pass those savings directly to you.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simplified Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><span>Toufiq</span> Creative</div>
+            <div class="footer-socials" style="margin-bottom: 15px;">
+                <a href="https://www.upwork.com/freelancers/~01d9c6461924d60d8d" target="_blank" aria-label="Upwork Profile"><i class="fa-solid fa-briefcase"></i></a>
+                <a href="mailto:toufiq.info.bd@gmail.com" aria-label="Email Client"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#" aria-label="Linkedin Profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/toufiq.hasan.395" target="_blank" aria-label="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 Toufiq Creative | Amazon Creative Studio. All Rights Reserved. | <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function openArticle(id) {
+            document.getElementById(id).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeArticle(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e222b"/>
+      <stop offset="50%" stop-color="#121418"/>
+      <stop offset="100%" stop-color="#0a0b0d"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#ff5500"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#goldGrad)"/>
+  
+  <!-- Decorative Grid Lines -->
+  <g stroke="#242933" stroke-width="1.5" opacity="0.4">
+    <line x1="50" y1="0" x2="50" y2="500" />
+    <line x1="150" y1="0" x2="150" y2="500" />
+    <line x1="250" y1="0" x2="250" y2="500" stroke="#ff9900" stroke-width="1" opacity="0.2"/>
+    <line x1="350" y1="0" x2="350" y2="500" />
+    <line x1="450" y1="0" x2="450" y2="500" />
+    
+    <line x1="0" y1="50" x2="500" y2="50" />
+    <line x1="0" y1="150" x2="500" y2="150" />
+    <line x1="0" y1="250" x2="500" y2="250" stroke="#ff9900" stroke-width="1" opacity="0.2"/>
+    <line x1="0" y1="350" x2="500" y2="350" />
+    <line x1="0" y1="450" x2="500" y2="450" />
+  </g>
+  
+  <!-- Tech Circle Vector Graphic -->
+  <circle cx="250" cy="220" r="100" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-dasharray="10 5" opacity="0.5"/>
+  <circle cx="250" cy="220" r="80" fill="none" stroke="#f2a900" stroke-width="1" opacity="0.3"/>
+  <circle cx="250" cy="220" r="5" fill="#ff9900"/>
+  
+  <!-- Camera / Product Icon -->
+  <g transform="translate(230, 200)" fill="#ff9900" opacity="0.8">
+    <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm16 4h-4v-1h-4v1H4v10h16V8zm-8 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+  </g>
+
+  <!-- Typography Labels -->
+  <text x="250" y="370" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="700" fill="#f3f4f6" text-anchor="middle" letter-spacing="1">
+    AMAZON DESIGN PREVIEW
+  </text>
+  
+  <text x="250" y="400" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#9ca3af" text-anchor="middle" letter-spacing="0.5">
+    Photoshop Polished • High-Converting Visuals
+  </text>
+  
+  <rect x="180" y="420" width="140" height="24" rx="12" fill="rgba(255, 153, 0, 0.1)" stroke="rgba(255, 153, 0, 0.3)" stroke-width="1"/>
+  <text x="250" y="436" font-family="'Outfit', sans-serif" font-size="10" font-weight="600" fill="#ff9900" text-anchor="middle" letter-spacing="1">
+    TOUFIQ DESIGNS
+  </text>
+</svg>
