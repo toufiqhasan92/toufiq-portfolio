@@ -3,7 +3,7 @@
  * Custom Slider, Dynamic CSV Parser, Amazon Simulator, A+ content switcher, and Theme Manager.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
     // 1. Core State
     let projectsData = [];
     let activeAplusBrand = 'colsigen';
@@ -293,8 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
         10: 'Red Onion',
         11: 'Ameer Ice',
         12: 'aysoni glutathione',
-        13: 'Ronson Storefont',
-        14: 'STARFIRE storefont',
+        13: 'ronson-storefront',
+        14: 'starfire-storefront',
         15: 'blitz',
         16: 'Pink Cones',
         17: 'Moringa Bitters Listing',
@@ -1149,14 +1149,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const selected = btn.dataset.storefront;
 
             if (selected === 'starfire') {
-                storefrontPreviewImg.src = 'images/STARFIRE storefont/preview 01.jpg';
+                storefrontPreviewImg.src = 'images/starfire-storefront/preview-01.jpg';
                 storefrontPreviewImg.alt = 'STARFIRE Storefront Preview';
                 storefrontBrowserAddress.textContent = 'amazon.com/stores/starfire';
                 
                 sfDetailsStarfire.style.display = 'block';
                 sfDetailsRonson.style.display = 'none';
             } else if (selected === 'ronson') {
-                storefrontPreviewImg.src = 'images/Ronson Storefont/Storefront Artboard.jpg.jpeg';
+                storefrontPreviewImg.src = 'images/ronson-storefront/storefront-artboard.jpg';
                 storefrontPreviewImg.alt = 'Ronson Storefront Preview';
                 storefrontBrowserAddress.textContent = 'amazon.com/stores/ronson';
 
@@ -1225,4 +1225,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 12. Run Initializer
     // ==========================================
     fetchProjects();
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
