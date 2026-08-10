@@ -1433,32 +1433,40 @@ textarea.form-input {
     border: 1px solid var(--border-color);
 }
 
-.browser-body {
+.browser-body, .browser-content {
     flex-grow: 1;
-    overflow-y: scroll;
+    height: 550px;
+    overflow: hidden;
     background: #0d1117;
     position: relative;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) var(--bg-primary);
+    cursor: pointer;
 }
 
-.browser-body::-webkit-scrollbar {
-    width: 6px;
-}
-
-.browser-body::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-}
-
-.browser-body::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: 3px;
-}
-
-.browser-body img {
+.browser-body img, .browser-content img {
     width: 100%;
     height: auto;
     display: block;
+    animation: autoScrollStorefront 16s ease-in-out infinite alternate;
+    transition: transform 0.5s ease;
+}
+
+.browser-body:hover img, .browser-content:hover img {
+    animation-play-state: paused;
+}
+
+@keyframes autoScrollStorefront {
+    0% {
+        transform: translateY(0%);
+    }
+    15% {
+        transform: translateY(0%);
+    }
+    85% {
+        transform: translateY(calc(-100% + 550px));
+    }
+    100% {
+        transform: translateY(calc(-100% + 550px));
+    }
 }
 
 /* Trust Bar Logo Styling & Responsiveness */

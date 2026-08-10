@@ -1163,6 +1163,11 @@ const initApp = () => {
                 sfDetailsStarfire.style.display = 'none';
                 sfDetailsRonson.style.display = 'block';
             }
+
+            // Reset scroll animation to start from top
+            storefrontPreviewImg.style.animation = 'none';
+            storefrontPreviewImg.offsetHeight; // Trigger DOM reflow
+            storefrontPreviewImg.style.animation = '';
         });
     });
 
