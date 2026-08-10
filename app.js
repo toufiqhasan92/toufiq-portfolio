@@ -298,7 +298,13 @@ const initApp = () => {
         15: 'blitz',
         16: 'Pink Cones',
         17: 'Moringa Bitters Listing',
-        18: 'Slecon gun and reel cloth'
+        18: 'Slecon gun and reel cloth',
+        19: 'blitz-storefront',
+        20: 'gem-jewelry-cleaner',
+        21: 'gem-jewelry-cleaner',
+        22: 'ravitine-citrus',
+        23: 'ravitine-citrus',
+        24: 'soursop-bitters'
     };
 
     let currentSlideIndex = 0;
@@ -1140,6 +1146,7 @@ const initApp = () => {
     const storefrontBrowserAddress = document.getElementById('storefront-browser-address');
     const sfDetailsStarfire = document.getElementById('sf-details-starfire');
     const sfDetailsRonson = document.getElementById('sf-details-ronson');
+    const sfDetailsBlitz = document.getElementById('sf-details-blitz');
 
     storefrontSelectors.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -1150,18 +1157,28 @@ const initApp = () => {
 
             if (selected === 'starfire') {
                 storefrontPreviewImg.src = 'images/starfire-storefront/preview-01.jpg';
-                storefrontPreviewImg.alt = 'STARFIRE Storefront Preview';
+                storefrontPreviewImg.alt = 'Amazon Storefront Design for STARFIRE - Toufiq Creative';
                 storefrontBrowserAddress.textContent = 'amazon.com/stores/starfire';
                 
                 sfDetailsStarfire.style.display = 'block';
                 sfDetailsRonson.style.display = 'none';
+                if (sfDetailsBlitz) sfDetailsBlitz.style.display = 'none';
             } else if (selected === 'ronson') {
                 storefrontPreviewImg.src = 'images/ronson-storefront/storefront-artboard.jpg';
-                storefrontPreviewImg.alt = 'Ronson Storefront Preview';
+                storefrontPreviewImg.alt = 'Amazon Storefront Design for Ronson - Toufiq Creative';
                 storefrontBrowserAddress.textContent = 'amazon.com/stores/ronson';
 
                 sfDetailsStarfire.style.display = 'none';
                 sfDetailsRonson.style.display = 'block';
+                if (sfDetailsBlitz) sfDetailsBlitz.style.display = 'none';
+            } else if (selected === 'blitz') {
+                storefrontPreviewImg.src = 'images/blitz-storefront/preview-01.jpg';
+                storefrontPreviewImg.alt = 'Amazon Storefront Design for Blitz Jewelry Care - Toufiq Creative';
+                storefrontBrowserAddress.textContent = 'amazon.com/stores/blitz';
+
+                sfDetailsStarfire.style.display = 'none';
+                sfDetailsRonson.style.display = 'none';
+                if (sfDetailsBlitz) sfDetailsBlitz.style.display = 'block';
             }
 
             // Reset scroll animation to start from top
