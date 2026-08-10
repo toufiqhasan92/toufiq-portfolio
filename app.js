@@ -304,7 +304,8 @@ const initApp = () => {
         21: 'gem-jewelry-cleaner',
         22: 'ravitine-citrus',
         23: 'ravitine-citrus',
-        24: 'soursop-bitters'
+        24: 'soursop-bitters',
+        25: 'blitz'
     };
 
     let currentSlideIndex = 0;
