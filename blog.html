@@ -187,6 +187,22 @@
         </div>
 
         <div class="blog-grid">
+            <!-- Featured Blitz Case Study Card -->
+            <div class="glass-card blog-card" onclick="openArticle('article-blitz')" style="border: 1px solid var(--accent); background: linear-gradient(135deg, rgba(255, 170, 0, 0.05), var(--card-bg));">
+                <div>
+                    <div class="blog-card-image">
+                        <img src="images/blitz/ebc/07.jpg" alt="Amazon Case Study - Blitz Jewelry Care Design Ecosystem">
+                    </div>
+                    <div class="blog-meta-info">
+                        <span style="color: var(--accent); font-weight: 700;"><i class="fa-solid fa-gem" style="margin-right: 5px;"></i> Featured Case Study</span>
+                        <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 8 min read</span>
+                    </div>
+                    <h3>Case Study: Building a Complete Amazon Design Ecosystem for Blitz Jewelry Care (+48% Growth)</h3>
+                    <p>An end-to-end breakdown of how we unified Blitz's Amazon Storefront, A+ Content (EBC), and Product Listing Graphics to transform customer trust and conversion rates.</p>
+                </div>
+                <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
             <!-- Article 1 Card -->
             <div class="glass-card blog-card" onclick="openArticle('article-1')">
                 <div>
@@ -281,6 +297,68 @@
                     <p>Scaling to the US, Europe, or Asia? Learn how to localize graphics, metric measurements, and text callouts to convert local buyers.</p>
                 </div>
                 <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Full Guide <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Blitz Case Study Modal -->
+    <div class="article-modal" id="article-blitz">
+        <div class="glass-card article-content">
+            <button class="close-article" onclick="closeArticle('article-blitz')">&times;</button>
+            <div class="blog-meta-info" style="margin-bottom: 20px;">
+                <span class="tag"><i class="fa-solid fa-gem" style="margin-right: 5px;"></i> Featured Case Study</span>
+                <span style="color: var(--text-secondary);">August 10, 2026 &bull; 8 min read</span>
+            </div>
+            <h1 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">
+                Building a Unified Amazon Design Ecosystem: The Blitz Jewelry Care Success Story
+            </h1>
+            
+            <div class="article-image">
+                <img src="images/blitz/ebc/07.jpg" alt="Blitz Premium Jewelry Cleaner Amazon A+ Content Banner">
+            </div>
+
+            <div class="article-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 25px 0;">
+                    <div style="padding: 15px; text-align: center; border-radius: 12px; background: rgba(255, 170, 0, 0.08); border: 1px solid var(--accent);">
+                        <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent);">+48%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Storefront Traffic</div>
+                    </div>
+                    <div style="padding: 15px; text-align: center; border-radius: 12px; background: rgba(255, 170, 0, 0.08); border: 1px solid var(--accent);">
+                        <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent);">+45%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Conversion Rate</div>
+                    </div>
+                    <div style="padding: 15px; text-align: center; border-radius: 12px; background: rgba(255, 170, 0, 0.08); border: 1px solid var(--accent);">
+                        <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent);">+36%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Basket Size</div>
+                    </div>
+                    <div style="padding: 15px; text-align: center; border-radius: 12px; background: rgba(255, 170, 0, 0.08); border: 1px solid var(--accent);">
+                        <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent);">-28%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Return Rate</div>
+                    </div>
+                </div>
+
+                <h3>1. The Brand Challenge</h3>
+                <p>In the crowded Amazon jewelry cleaner category, buyers are inherently cautious about damaging expensive gold, silver, diamonds, and delicate heirloom stones. Blitz USA needed a cohesive, luxury visual identity that would immediately establish trust, clearly explain dilution ratios, and cross-sell across their full line of cloths, machines, and concentrate solutions.</p>
+
+                <h3>2. The Multi-Layered Visual Solution</h3>
+                <p>Toufiq Creative developed a synchronized 3-tier Amazon design ecosystem:</p>
+                <ul>
+                    <li><strong>Product Listing Graphics:</strong> Engineered 7 high-contrast sapphire blue infographics featuring step-by-step dilution instructions, ultrasonic compatibility callouts, and travel pen utility.</li>
+                    <li><strong>7-Module A+ Content (EBC):</strong> Built an editorial brand journey framed around <em>"Every Gem Deserves to Shine"</em>, featuring direct before/after sparkle restorations and product comparison tables.</li>
+                    <li><strong>Amazon Brand Storefront:</strong> Created a full multipage brand store with dedicated tabs for delicate gems, ultrasonic formulas, silver cloths, and care kits.</li>
+                </ul>
+
+                <div style="border-radius: 12px; overflow: hidden; margin: 25px 0; border: 1px solid var(--border);">
+                    <img src="images/blitz/listing/02.jpg" alt="Blitz Listing Infographic" style="width: 100%; display: block;">
+                </div>
+
+                <h3>3. Key Results & Takeaways</h3>
+                <p>By connecting high-converting listing graphics with authoritative A+ storytelling and a frictionless Storefront, Blitz achieved a <strong>+48% increase in Storefront organic traffic</strong> and a <strong>+45% conversion rate uplift</strong> while dramatically decreasing buyer returns.</p>
+
+                <div style="text-align: center; margin-top: 35px; padding-top: 25px; border-top: 1px solid var(--border);">
+                    <a href="blitz-case-study.html" class="btn btn-secondary" style="margin-right: 10px;">Read Dedicated Case Study Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="index.html#contact" class="btn btn-primary">Get a Custom Amazon Design Quote</a>
+                </div>
             </div>
         </div>
     </div>
