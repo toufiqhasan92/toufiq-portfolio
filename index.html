@@ -212,6 +212,44 @@
     </div>
 
 
+    <!-- Portfolio Gallery Section -->
+    <section class="section-padding" id="portfolio" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag">Showcase</span>
+                <h2>Portfolio & Case Studies</h2>
+                <p>Explore real listing optimizations, custom infographics, and premium A+ Modules. Filter below by design category.</p>
+            </div>
+            
+            <div class="portfolio-filters" id="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="Listing Images">Listing Images</button>
+                <button class="filter-btn" data-filter="A+ Content">A+ Content / EBC</button>
+                <button class="filter-btn" data-filter="Storefronts">Storefronts</button>
+                <button class="filter-btn" data-filter="Live Projects">Live Projects</button>
+            </div>
+
+            <div class="portfolio-grid" id="gallery-grid">
+                <!-- Dynamically loaded from projects.csv via app.js -->
+                <div class="glass-card portfolio-item placeholder-card">
+                    <div style="padding: 100px; text-align: center; color: var(--text-secondary);">
+                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                        <p>Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Explore Dedicated Service Pages -->
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 45px;">
+                <a href="amazon-listing-design.html" class="btn btn-secondary"><i class="fa-solid fa-images" style="margin-right: 8px;"></i> All Listing Designs</a>
+                <a href="amazon-aplus-content-design.html" class="btn btn-secondary"><i class="fa-solid fa-layer-group" style="margin-right: 8px;"></i> All A+ Content (EBC)</a>
+                <a href="amazon-storefront-design.html" class="btn btn-secondary"><i class="fa-solid fa-store" style="margin-right: 8px;"></i> All Brand Storefronts</a>
+                <a href="blog.html" class="btn btn-primary"><i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Read Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Services Section -->
     <section class="section-padding" id="services">
         <div class="container">
@@ -435,34 +473,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Gallery Section -->
-    <section class="section-padding" id="portfolio" style="background-color: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header">
-                <span class="tag">Showcase</span>
-                <h2>Portfolio & Case Studies</h2>
-                <p>Explore real listing optimizations, custom infographics, and premium A+ Modules. Filter below by design category.</p>
-            </div>
-            
-            <div class="portfolio-filters" id="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="Listing Images">Listing Images</button>
-                <button class="filter-btn" data-filter="A+ Content">A+ Content / EBC</button>
-                <button class="filter-btn" data-filter="Storefronts">Storefronts</button>
-                <button class="filter-btn" data-filter="Live Projects">Live Projects</button>
-            </div>
-
-            <div class="portfolio-grid" id="gallery-grid">
-                <!-- Dynamically loaded from projects.csv via app.js -->
-                <div class="glass-card portfolio-item placeholder-card">
-                    <div style="padding: 100px; text-align: center; color: var(--text-secondary);">
-                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                        <p>Loading projects...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Live Amazon Listings Section -->
     <section class="section-padding" id="live-listings" style="background-color: var(--bg-primary);">
