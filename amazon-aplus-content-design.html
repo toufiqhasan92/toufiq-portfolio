@@ -70,12 +70,20 @@
     </style>
 </head>
 <body>
+        <!-- Navigation Header -->
     <header class="navbar" id="main-nav">
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="index.html" class="logo" id="nav-logo"><span>Toufiq</span> Creative</a>
-            <div style="display: flex; gap: 15px; align-items: center;">
-                <a href="index.html" class="btn btn-secondary">Homepage</a>
-                <a href="index.html#contact" class="btn btn-primary">Start a Project</a>
+            <nav style="display: flex; gap: 24px; align-items: center;" class="nav-links">
+                <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem;  transition: color 0.2s;">Home</a>
+                <a href="amazon-listing-design.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem;  transition: color 0.2s;">Listing Images</a>
+                <a href="amazon-aplus-content-design.html" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.95rem; border-bottom: 2px solid var(--accent); padding-bottom: 4px; transition: color 0.2s;">A+ Content</a>
+                <a href="amazon-storefront-design.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem;  transition: color 0.2s;">Storefronts</a>
+                <a href="blog.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem;  transition: color 0.2s;">Case Studies</a>
+                
+            </nav>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">Start Project</a>
             </div>
         </div>
     </header>
@@ -185,6 +193,47 @@
                             <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Home & Decor &bull; +38% Volume</span>
                             <h4>Oasis Pearled Sand Candles</h4>
                             <p>Granulated sand wax aesthetics with refillable wick instructions and modern lifestyle setups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Other Amazon Design Services (Internal Linking Silo) -->
+        <section class="section-padding" style="background: var(--bg-primary);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Complete Amazon Suite</span>
+                    <h2>Other Amazon Design Solutions We Provide</h2>
+                    <p>Connect your visual assets across every touchpoint to maximize Amazon brand trust and average order value.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
+                    
+                    <div class="glass-card" style="padding: 30px; border-radius: 16px; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(255,170,0,0.1); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">
+                                <i class="fa-solid fa-images"></i>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary);">Amazon Product Listing Images</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">7-image conversion-engineered stacks featuring hero CTR boosters, benefit infographics, and lifestyle renders.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid var(--border);">
+                            <span style="font-weight: 700; color: var(--accent);">$100 / Pack</span>
+                            <a href="amazon-listing-design.html" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.88rem;">Explore Service <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="padding: 30px; border-radius: 16px; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(255,170,0,0.1); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px;">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary);">Amazon Brand Storefronts</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Competitor-free multipage brand stores with custom navigation tabs, catalog grids, and promo tiles.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid var(--border);">
+                            <span style="font-weight: 700; color: var(--accent);">$200 / Store</span>
+                            <a href="amazon-storefront-design.html" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.88rem;">Explore Service <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i></a>
                         </div>
                     </div>
                 </div>
