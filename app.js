@@ -64,7 +64,7 @@ const initApp = () => {
         }
     };
 
-    themeToggleBtn.addEventListener('click', () => {
+    themeToggleBtn && themeToggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
@@ -85,7 +85,7 @@ const initApp = () => {
         }
     });
 
-    mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle && mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         const icon = mobileMenuToggle.querySelector('i');
         icon.classList.toggle('fa-bars');
@@ -119,7 +119,7 @@ const initApp = () => {
     };
 
     // Desktop Mouse Events
-    sliderHandle.addEventListener('mousedown', (e) => {
+    sliderHandle && sliderHandle.addEventListener('mousedown', (e) => {
         isDragging = true;
         e.preventDefault();
     });
@@ -134,7 +134,7 @@ const initApp = () => {
     });
 
     // Mobile Touch Events
-    sliderHandle.addEventListener('touchstart', (e) => {
+    sliderHandle && sliderHandle.addEventListener('touchstart', (e) => {
         isDragging = true;
     }, { passive: true });
 
@@ -150,7 +150,7 @@ const initApp = () => {
     });
 
     // Optional click on slider anywhere to move handle
-    heroSlider.addEventListener('click', (e) => {
+    heroSlider && heroSlider.addEventListener('click', (e) => {
         if (e.target !== sliderHandle && !sliderHandle.contains(e.target)) {
             moveSlider(e.clientX);
         }
