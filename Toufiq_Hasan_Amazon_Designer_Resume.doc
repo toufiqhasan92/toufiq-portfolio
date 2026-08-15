@@ -1,0 +1,68 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+    <title>Toufiq Hasan Resume</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; color: #333333; margin: 40px; }
+        h1 { color: #cc7a00; font-size: 26pt; margin-bottom: 5px; font-weight: bold; }
+        .subtitle { font-size: 14pt; font-weight: bold; color: #555555; margin-bottom: 15px; }
+        .contact-info { font-size: 10pt; color: #666666; margin-bottom: 25px; border-bottom: 2px solid #cc7a00; padding-bottom: 10px; }
+        h2 { color: #cc7a00; font-size: 14pt; border-bottom: 1px solid #dddddd; padding-bottom: 5px; margin-top: 25px; margin-bottom: 12px; text-transform: uppercase; font-weight: bold; }
+        .section-content { margin-bottom: 20px; }
+        .job-title { font-weight: bold; font-size: 12pt; color: #111111; }
+        .company-date { font-style: italic; color: #555555; margin-bottom: 8px; }
+        ul { margin-top: 5px; margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 6px; font-size: 10.5pt; }
+        .skills-list { font-size: 11pt; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <h1>TOUFIQ HASAN</h1>
+    <div class="subtitle">Lead Amazon Creative Strategist & Brand Designer</div>
+    <div class="contact-info">
+        Email: toufiq.info.bd@gmail.com | Phone: +8801978997430 | Location: Dhaka, Bangladesh<br>
+        Portfolio: <a href="https://toufiqcreative.com" style="color: #cc7a00; text-decoration: none;">toufiqcreative.com</a> | Upwork: <a href="https://www.upwork.com/freelancers/~01d9c6461924d60d8d" style="color: #cc7a00; text-decoration: none;">Top Rated Profile</a>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <div class="section-content">
+        Top Rated Amazon Creative Designer with 2+ years of experience specializing in high-converting product listing graphics, editorial-grade A+ Content (EBC), and competitor-free Brand Storefronts. Proven track record of boosting conversion rates (CR) by +30% and click-through rates (CTR) by +39% for global e-commerce brands. Expert in Adobe Photoshop, Illustrator, and photorealistic 3D lifestyle compositing compliant with Amazon TOS.
+    </div>
+
+    <h2>Core Expertise & Technical Skills</h2>
+    <div class="section-content skills-list">
+        <strong>Amazon Design:</strong> Hero Image Optimization, Benefit Infographics, Dimensions Charts, Competitor Comparison Grids.<br>
+        <strong>Brand Assets:</strong> Multi-Page Storefront Design, Shoppable Custom Grids, A+ Content (EBC) Modules, Brand Story Carousels.<br>
+        <strong>Software & Tools:</strong> Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Midjourney AI (Product Backdrops).<br>
+        <strong>E-commerce Strategy:</strong> Conversion Rate Optimization (CRO), Click-Through Rate (CTR) Boosts, Amazon TOS Compliance, Mobile-First Visual UX.
+    </div>
+
+    <h2>Professional Experience</h2>
+    <div class="section-content">
+        <div class="job-title">Lead Amazon Creative Designer & Founder</div>
+        <div class="company-date">Toufiq Creative | Dhaka, Bangladesh (Remote) | Jan 2024 - Present</div>
+        <ul>
+            <li>Founded and scaled a boutique Amazon design studio, delivering 800+ conversion-focused listing graphics and storefronts for global brands.</li>
+            <li><strong>Blitz Jewelry Care:</strong> Engineered a unified visual ecosystem (+48% Storefront growth and +45% organic listing conversion rate).</li>
+            <li><strong>Revitin Toothpaste:</strong> Redesigned product listing graphics resulting in a +39% CTR boost and +34% sales growth.</li>
+            <li><strong>Sombra Wellness:</strong> Created minimalist skincare listing images and EBC modules, driving a +33% conversion rate.</li>
+            <li>Consulted with brand managers and copywriters to translate complex marketing copy into visual infographics.</li>
+        </ul>
+
+        <div class="job-title">Freelance Amazon Graphic Designer (Top Rated)</div>
+        <div class="company-date">Upwork & Fiverr | Remote | Mar 2022 - Present</div>
+        <ul>
+            <li>Maintained a 100% Job Success Score and Top Rated status on Upwork, collaborating with 100+ private label FBA brands in US, UK, and EU markets.</li>
+            <li>Developed photorealistic 3D lifestyle composite scenes utilizing stock photography and generative AI tools to lower photoshoot costs for clients.</li>
+            <li>Ensured 100% compliance with Amazon listing image requirements, eliminating suppression risks.</li>
+        </ul>
+    </div>
+
+    <h2>Education & Credentials</h2>
+    <div class="section-content">
+        <strong>Bachelor of Graphic Design / Creative Media</strong><br>
+        Institution Name, Graduation Year<br><br>
+        <strong>Certified Amazon Storefront & A+ Content Creator</strong><br>
+        E-commerce Design Association
+    </div>
+</body>
+</html>
