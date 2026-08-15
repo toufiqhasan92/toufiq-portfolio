@@ -388,12 +388,12 @@ const initApp = () => {
         modalPagination.innerText = `${currentSlideIndex + 1} / ${totalSlides}`;
     };
 
-    modalArrowLeft.addEventListener('click', (e) => {
+    modalArrowLeft && modalArrowLeft.addEventListener('click', (e) => {
         e.stopPropagation();
         showSlide(currentSlideIndex - 1);
     });
     
-    modalArrowRight.addEventListener('click', (e) => {
+    modalArrowRight && modalArrowRight.addEventListener('click', (e) => {
         e.stopPropagation();
         showSlide(currentSlideIndex + 1);
     });
@@ -531,8 +531,8 @@ const initApp = () => {
         document.body.style.overflow = '';
     };
 
-    modalCloseBtn.addEventListener('click', closeProjectModal);
-    projectModal.addEventListener('click', (e) => {
+    modalCloseBtn && modalCloseBtn.addEventListener('click', closeProjectModal);
+    projectModal && projectModal.addEventListener('click', (e) => {
         if (e.target === projectModal) {
             closeProjectModal();
         }
@@ -1285,7 +1285,7 @@ const initApp = () => {
     // ==========================================
     // 11. Contact Form State Animation
     // ==========================================
-    inquiryForm.addEventListener('submit', (e) => {
+    inquiryForm && inquiryForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Dynamic loading transition
@@ -1293,7 +1293,7 @@ const initApp = () => {
         const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Submitting Inquiry...';
-
+ 
         setTimeout(() => {
             // Animate transition between form and success message
             inquiryForm.style.display = 'none';
