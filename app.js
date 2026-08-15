@@ -199,26 +199,84 @@ const initApp = () => {
         }).filter(p => p.ID); // Filter out empty or corrupt records
     };
 
+    const renderServiceGrid = (gridElement, projects) => {
+        gridElement.innerHTML = '';
+        if (projects.length === 0) {
+            gridElement.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No projects found.</p>';
+            return;
+        }
+
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'glass-card gallery-card';
+            
+            // Format metric tags
+            const categories = project.Category.split(',');
+            const primaryTag = categories[0].replace(/"/g, '').trim();
+            
+            card.style.cursor = 'pointer';
+            card.innerHTML = `
+                <img src="${project.After_Image}" alt="${project.Title}" onerror="this.src='images/placeholder_rect.svg'">
+                <div class="gallery-info">
+                    <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">${primaryTag} &bull; ${project.Metrics_Uplift}</span>
+                    <h4>${project.Title}</h4>
+                    <p>${project.Description.substring(0, 100)}...</p>
+                </div>
+            `;
+
+            card.addEventListener('click', () => {
+                openProjectModal(project);
+            });
+
+            gridElement.appendChild(card);
+        });
+    };
+
     const fetchProjects = async () => {
         try {
             const response = await fetch('projects.csv');
             const dataText = await response.text();
             projectsData = parseCSV(dataText);
             
-            const featuredIds = ["22", "25", "18", "23", "24", "15", "7", "14", "19"];
-            const featured = featuredIds.map(id => projectsData.find(p => String(p.ID) === id)).filter(Boolean);
-            renderPortfolioGrid(featured.length > 0 ? featured : projectsData);
+            if (galleryGrid) {
+                const featuredIds = ["22", "25", "18", "23", "24", "15", "7", "14", "19"];
+                const featured = featuredIds.map(id => projectsData.find(p => String(p.ID) === id)).filter(Boolean);
+                renderPortfolioGrid(featured.length > 0 ? featured : projectsData);
+            }
+
+            // Dynamically load listing page gallery if element exists
+            const listingGrid = document.getElementById('listing-gallery-grid');
+            if (listingGrid) {
+                const listings = projectsData.filter(p => p.Category.toLowerCase().includes('listing images'));
+                renderServiceGrid(listingGrid, listings);
+            }
+
+            // Dynamically load A+ page gallery if element exists
+            const aplusGrid = document.getElementById('aplus-gallery-grid');
+            if (aplusGrid) {
+                const aplus = projectsData.filter(p => p.Category.toLowerCase().includes('a+ content'));
+                renderServiceGrid(aplusGrid, aplus);
+            }
+
+            // Dynamically load storefront page gallery if element exists
+            const storefrontGrid = document.getElementById('storefront-gallery-grid');
+            if (storefrontGrid) {
+                const storefronts = projectsData.filter(p => p.Category.toLowerCase().includes('storefronts'));
+                renderServiceGrid(storefrontGrid, storefronts);
+            }
 
             renderAplusContent(activeAplusBrand); // Setup first A+ brand
         } catch (error) {
             console.error('Error fetching CSV projects:', error);
-            galleryGrid.innerHTML = `
-                <div style="grid-column: 1/-1; text-align:center; padding:50px;">
-                    <i class="fa-solid fa-triangle-exclamation" style="font-size:3rem; color:#ef4444; margin-bottom:15px;"></i>
-                    <h4>Error Loading Portfolio Data</h4>
-                    <p style="color:var(--text-secondary);">Please ensure projects.csv file is correctly configured in your root directory.</p>
-                </div>
-            `;
+            if (galleryGrid) {
+                galleryGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align:center; padding:50px;">
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size:3rem; color:#ef4444; margin-bottom:15px;"></i>
+                        <h4>Error Loading Portfolio Data</h4>
+                        <p style="color:var(--text-secondary);">Please ensure projects.csv file is correctly configured in your root directory.</p>
+                    </div>
+                `;
+            }
         }
     };
 
@@ -310,7 +368,13 @@ const initApp = () => {
         22: 'ravitine-citrus',
         23: 'ravitine-citrus',
         24: 'soursop-bitters',
-        25: 'blitz'
+        25: 'blitz',
+        27: 'Strataderm/listing/strataderm',
+        28: 'Strataderm/listing/stratamed',
+        29: 'Strataderm/listing/strataMGT',
+        30: 'Strataderm/A+ Content/Stataderm',
+        31: 'Strataderm/A+ Content/Stratamed',
+        32: 'Strataderm/A+ Content/Strata MGT'
     };
 
     let currentSlideIndex = 0;

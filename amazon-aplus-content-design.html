@@ -173,56 +173,8 @@
                     <p>Browse our custom 7-module EBC designs for global health, beauty, and home brands.</p>
                 </div>
 
-                <div class="portfolio-gallery-grid">
-                    <div class="gallery-card glass-card">
-                        <img src="images/thumbnails/revitin-ebc.jpg" alt="Revitin Toothpaste A+ Content Design">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Oral Care &bull; +34% CR</span>
-                            <h4>Revitin Natural Prebiotic Citrus A+</h4>
-                            <p>Citrus splash banner, oral microbiome science, and head-to-head comparison modules.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card glass-card">
-                        <img src="images/thumbnails/soursop-bitters.jpg" alt="Amenazel Soursop Bitters A+ Content">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Supplements &bull; +35% Growth</span>
-                            <h4>Amenazel Organic Soursop Bitters A+</h4>
-                            <p>Authentic 21-herb breakdown, wildcrafted Jamaican root visuals, and colon cleanse guides.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card glass-card">
-                        <img src="images/thumbnails/blitz-ebc.jpg" alt="Blitz Jewelry Cleaner A+ Content">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Jewelry Care &bull; +48% Traffic</span>
-                            <h4>Blitz Premium Jewelry Cleaner A+</h4>
-                            <p>Framed under "Every Gem Deserves to Shine" with sparkle before/after demonstrations.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card glass-card">
-                        <img src="images/thumbnails/sombra-hemp.jpg" alt="Sombra Hemp Body Cream A+ Content">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Skincare &bull; +33% Conversion</span>
-                            <h4>Sombra Premium Hemp Body Cream</h4>
-                            <p>Clean botanical aesthetic, whipped texture macro visuals, and cruelty-free certification cards.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card glass-card">
-                        <img src="images/zooba_after.jpg" alt="Zooba Lab Toothpaste A+ Content">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Oral Health &bull; +28% Sales</span>
-                            <h4>Zooba Lab Fluoride-Free Toothpaste</h4>
-                            <p>Mineral enamel remineralization with Hydroxyapatite and mountain-fresh branding.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card glass-card">
-                        <img src="images/oasis_after.jpg" alt="Oasis Pearled Sand Candles A+ Content">
-                        <div class="gallery-info">
-                            <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Home & Decor &bull; +38% Volume</span>
-                            <h4>Oasis Pearled Sand Candles</h4>
-                            <p>Granulated sand wax aesthetics with refillable wick instructions and modern lifestyle setups.</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="container">
+                <div id="aplus-gallery-grid" class="portfolio-gallery-grid"></div>
             </div>
         </section>
 
@@ -280,6 +232,44 @@
             </div>
         </section>
     </main>
+
+    <div class="modal" id="project-modal">
+        <div class="glass-card modal-content">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-visual" id="modal-visual-area" style="position: relative; width: 100%; height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 20px 0 0 20px;">
+                <!-- Slides will be inserted dynamically by JS -->
+                <div class="modal-slides-wrapper" id="modal-slides-wrapper" style="display: flex; width: 100%; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <!-- Slide elements go here -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="modal-arrow arrow-left" id="modal-arrow-left" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; opacity: 0; pointer-events: none;"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="modal-arrow arrow-right" id="modal-arrow-right" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; opacity: 0; pointer-events: none;"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Pagination Indicator -->
+                <div class="modal-pagination" id="modal-pagination" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: var(--accent); z-index: 100; display: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid var(--border-color);">1 / 1</div>
+            </div>
+            <div class="modal-info">
+                <span class="portfolio-details" style="padding:0;">
+                    <span class="meta" style="margin-bottom: 10px;">
+                        <span class="category-tag">
+                            <span class="category" id="modal-category">Case Study</span>
+                            <span class="uplift" id="modal-uplift"></span>
+                        </span>
+                    </span>
+                    <h3 id="modal-title" style="font-size: 1.8rem; margin-bottom: 15px;">Case Study Details</h3>
+                    <p id="modal-desc" style="font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;"></p>
+                    
+                    <h4 style="font-size: 1rem; margin-bottom: 10px; font-weight: 600;">Optimized Amazon Features:</h4>
+                    <ul id="modal-features-list" style="margin-bottom: 30px; display:flex; flex-direction:column; gap:8px;">
+                        <!-- Bullet points loaded here -->
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary" id="modal-cta-btn">Discuss Similar Project</a>
+                </span>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">

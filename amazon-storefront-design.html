@@ -173,46 +173,8 @@
                     <p>Custom multi-page brand store architectures designed for enterprise and boutique brands.</p>
                 </div>
 
-                <div class="storefront-showcase-grid">
-                    <div class="sf-card glass-card">
-                        <img src="images/thumbnails/starfire-storefront.jpg" alt="STARFIRE Automotive Amazon Brand Storefront">
-                        <div class="sf-info">
-                            <h4>STARFIRE Automotive Brand Storefront</h4>
-                            <p>Multi-category architecture with dedicated tabs for motor oils, coolant chemicals, brake fluids, and heavy industrial fluids.</p>
-                            <div class="sf-badges">
-                                <span class="sf-badge">+35% Cross-Sales</span>
-                                <span class="sf-badge">5-Tab Navigation</span>
-                                <span class="sf-badge">Catalog Grid</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sf-card glass-card">
-                        <img src="images/thumbnails/blitz-storefront.jpg" alt="Blitz Jewelry Care Amazon Storefront">
-                        <div class="sf-info">
-                            <h4>Blitz Jewelry Care Brand Storefront</h4>
-                            <p>Luxury fine jewelry care experience with category segmentation for delicate gems, ultrasonic solutions, and silver polishing cloths.</p>
-                            <div class="sf-badges">
-                                <span class="sf-badge">+48% Store Traffic</span>
-                                <span class="sf-badge">Shoppable Tiles</span>
-                                <span class="sf-badge">Luxury Aesthetic</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sf-card glass-card">
-                        <img src="images/thumbnails/ronson-storefront.jpg" alt="Ronson Brand Storefront Custom Design">
-                        <div class="sf-info">
-                            <h4>Ronson Lighters & Accessories Store</h4>
-                            <p>High-energy visual layout with heritage branding, fuel accessories sub-pages, and responsive mobile optimization.</p>
-                            <div class="sf-badges">
-                                <span class="sf-badge">+29% Repeat Sales</span>
-                                <span class="sf-badge">Heritage Branding</span>
-                                <span class="sf-badge">Video Mockup</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="container">
+                <div id="storefront-gallery-grid" class="storefront-showcase-grid"></div>
             </div>
         </section>
 
@@ -270,6 +232,44 @@
             </div>
         </section>
     </main>
+
+    <div class="modal" id="project-modal">
+        <div class="glass-card modal-content">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-visual" id="modal-visual-area" style="position: relative; width: 100%; height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 20px 0 0 20px;">
+                <!-- Slides will be inserted dynamically by JS -->
+                <div class="modal-slides-wrapper" id="modal-slides-wrapper" style="display: flex; width: 100%; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <!-- Slide elements go here -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="modal-arrow arrow-left" id="modal-arrow-left" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; opacity: 0; pointer-events: none;"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="modal-arrow arrow-right" id="modal-arrow-right" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; opacity: 0; pointer-events: none;"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Pagination Indicator -->
+                <div class="modal-pagination" id="modal-pagination" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: var(--accent); z-index: 100; display: none; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid var(--border-color);">1 / 1</div>
+            </div>
+            <div class="modal-info">
+                <span class="portfolio-details" style="padding:0;">
+                    <span class="meta" style="margin-bottom: 10px;">
+                        <span class="category-tag">
+                            <span class="category" id="modal-category">Case Study</span>
+                            <span class="uplift" id="modal-uplift"></span>
+                        </span>
+                    </span>
+                    <h3 id="modal-title" style="font-size: 1.8rem; margin-bottom: 15px;">Case Study Details</h3>
+                    <p id="modal-desc" style="font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;"></p>
+                    
+                    <h4 style="font-size: 1rem; margin-bottom: 10px; font-weight: 600;">Optimized Amazon Features:</h4>
+                    <ul id="modal-features-list" style="margin-bottom: 30px; display:flex; flex-direction:column; gap:8px;">
+                        <!-- Bullet points loaded here -->
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary" id="modal-cta-btn">Discuss Similar Project</a>
+                </span>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
