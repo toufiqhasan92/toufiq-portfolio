@@ -85,20 +85,38 @@ const initApp = () => {
         }
     });
 
-    mobileMenuToggle && mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+    mobileMenuToggle && mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu && navMenu.classList.toggle('active');
         const icon = mobileMenuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
     });
 
     // Close menu when clicking nav item
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.className = 'fa-solid fa-bars';
+            navMenu && navMenu.classList.remove('active');
+            const icon = mobileMenuToggle && mobileMenuToggle.querySelector('i');
+            if (icon) {
+                icon.className = 'fa-solid fa-bars';
+            }
         });
+    });
+
+    // Close menu when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (navMenu && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && (!mobileMenuToggle || !mobileMenuToggle.contains(e.target))) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle && mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fa-solid fa-bars';
+                }
+            }
+        }
     });
 
     // ==========================================

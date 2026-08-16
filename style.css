@@ -261,7 +261,15 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -1265,36 +1273,58 @@ textarea.form-input {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block !important;
+    }
     .nav-links {
-        display: none;
+        display: none !important;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background: var(--bg-secondary);
-        padding: 20px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 24px 20px;
         border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         z-index: 1000;
-        gap: 15px;
+        gap: 12px;
     }
     .nav-links.active {
-        display: flex;
+        display: flex !important;
+        animation: mobileNavFade 0.25s ease-out forwards;
     }
     .nav-links a {
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    .nav-links a:hover {
+        background: rgba(255, 170, 0, 0.08);
     }
     .nav-links .btn {
         max-width: 200px;
         margin: 0 auto;
     }
-    .menu-toggle {
-        display: block;
+}
+
+@keyframes mobileNavFade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2rem;
         line-height: 1.25;
