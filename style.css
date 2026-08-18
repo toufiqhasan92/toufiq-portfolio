@@ -349,6 +349,7 @@ img {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.92rem;
+    white-space: nowrap;
     transition: color 0.2s ease;
 }
 
@@ -1378,12 +1379,13 @@ textarea.form-input {
         animation: mobileNavFade 0.25s ease-out forwards;
     }
     .nav-links a {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 1rem;
-        border-radius: 8px;
-    }
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
     .nav-links a:hover {
         background: rgba(255, 170, 0, 0.08);
     }
