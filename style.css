@@ -319,6 +319,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
@@ -329,6 +330,8 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-right: 24px;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -338,7 +341,7 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 22px;
 }
 
 .nav-links a {
