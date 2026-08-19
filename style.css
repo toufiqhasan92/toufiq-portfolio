@@ -1742,3 +1742,38 @@ textarea.form-input {
     box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15) !important;
 }
 
+
+
+/* Nav Actions & CTA Responsiveness */
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-desktop-cta {
+    display: inline-flex !important;
+}
+
+.nav-mobile-cta {
+    display: none !important;
+}
+
+@media (max-width: 992px) {
+    .nav-desktop-cta {
+        display: none !important;
+    }
+    .nav-mobile-cta {
+        display: inline-flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 8px !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    .menu-toggle {
+        display: flex !important;
+        flex-shrink: 0 !important;
+    }
+}
