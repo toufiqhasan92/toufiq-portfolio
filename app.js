@@ -85,39 +85,49 @@ const initApp = () => {
         }
     });
 
-    mobileMenuToggle && mobileMenuToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navMenu && navMenu.classList.toggle('active');
-        const icon = mobileMenuToggle.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        }
-    });
-
-    // Close menu when clicking nav item
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu && navMenu.classList.remove('active');
-            const icon = mobileMenuToggle && mobileMenuToggle.querySelector('i');
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
             if (icon) {
-                icon.className = 'fa-solid fa-bars';
-            }
-        });
-    });
-
-    // Close menu when clicking anywhere outside
-    document.addEventListener('click', (e) => {
-        if (navMenu && navMenu.classList.contains('active')) {
-            if (!navMenu.contains(e.target) && (!mobileMenuToggle || !mobileMenuToggle.contains(e.target))) {
-                navMenu.classList.remove('active');
-                const icon = mobileMenuToggle && mobileMenuToggle.querySelector('i');
-                if (icon) {
-                    icon.className = 'fa-solid fa-bars';
+                if (isActive) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
                 }
             }
-        }
-    });
+        });
+
+        // Close menu when clicking nav item
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Close menu when clicking anywhere outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        });
+    }
 
     // ==========================================
     // 5. Before/After Interactive Slider Logic
