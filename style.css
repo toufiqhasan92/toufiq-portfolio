@@ -1777,3 +1777,20 @@ textarea.form-input {
         flex-shrink: 0 !important;
     }
 }
+
+
+/* Rock-solid Mobile Header Cleanliness */
+@media (max-width: 992px) {
+    .nav-desktop-cta,
+    .navbar .btn-primary:not(.nav-mobile-cta),
+    .nav-actions .btn-primary:not(.nav-mobile-cta),
+    header .btn-primary:not(.nav-mobile-cta) {
+        display: none !important;
+    }
+    .menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-shrink: 0 !important;
+    }
+}
