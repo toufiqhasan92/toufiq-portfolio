@@ -506,7 +506,7 @@ img {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 1 / 1;
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
 }
