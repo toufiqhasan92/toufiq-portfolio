@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.5">
+    <link rel="stylesheet" href="style.css?v=3.9">
     <style>
         .blog-container {
             max-width: 1000px;
@@ -329,7 +329,23 @@
                 <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
             </div>
 
-                        <!-- Featured Oasis Candles Case Study Card -->
+                                    <!-- Featured Upwork $10K Milestone Card -->
+            <div class="glass-card blog-card" onclick="openArticle('article-milestone')" style="border: 1px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), var(--card-bg));">
+                <div>
+                    <div class="blog-card-image">
+                        <img src="images/thumbnails/upwork-10k-milestone.jpg?v=3.9" alt="Toufiq Creative $10,000 Upwork Milestone Celebration">
+                    </div>
+                    <div class="blog-meta-info">
+                        <span style="color: #10b981; font-weight: 700;"><i class="fa-solid fa-trophy" style="margin-right: 5px;"></i> Agency Milestone</span>
+                        <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 6 min read</span>
+                    </div>
+                    <h3>From $0 to $10,000+ on Upwork: 5 Conversion Lessons from Scaling 25+ Amazon Brands</h3>
+                    <p>What we learned helping global Amazon sellers turn passive traffic into 7-figure revenue through strategic A+ Content, CTR-optimized images, and high-retention design.</p>
+                </div>
+                <span style="color: #10b981; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);">Read Milestone Story <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Featured Oasis Candles Case Study Card -->
             <div class="glass-card blog-card" onclick="openArticle('article-oasis')" style="border: 1px solid var(--accent); background: linear-gradient(135deg, rgba(255, 170, 0, 0.05), var(--card-bg));">
                 <div>
                     <div class="blog-card-image">
@@ -349,7 +365,7 @@
             <div class="glass-card blog-card" onclick="openArticle('article-zooba')" style="border: 1px solid var(--accent); background: linear-gradient(135deg, rgba(255, 170, 0, 0.05), var(--card-bg));">
                 <div>
                     <div class="blog-card-image">
-                        <img src="images/thumbnails/zooba-lab.jpg?v=3.8" alt="Amazon Case Study - Zooba Lab Natural Fluoride-Free Toothpaste A+ Content">
+                        <img src="images/thumbnails/zooba-lab.jpg?v=3.9" alt="Amazon Case Study - Zooba Lab Natural Fluoride-Free Toothpaste A+ Content">
                     </div>
                     <div class="blog-meta-info">
                         <span style="color: var(--accent); font-weight: 700;"><i class="fa-solid fa-sparkles" style="margin-right: 5px;"></i> Featured Case Study</span>
@@ -397,7 +413,7 @@
             <div class="glass-card blog-card" onclick="openArticle('article-3')">
                 <div>
                     <div class="blog-card-image">
-                        <img src="images/thumbnails/blitz-ebc.jpg?v=3.7" alt="AI + Photoshop Lifestyle Renders">
+                        <img src="images/thumbnails/blitz-ebc.jpg?v=3.9" alt="AI + Photoshop Lifestyle Renders">
                     </div>
                     <div class="blog-meta-info">
                         <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> June 30, 2026</span>
@@ -687,7 +703,7 @@
             <h2 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">Scaling Zooba Lab Natural Toothpaste on Amazon: Hydroxyapatite Enamel Remineralization & Brand Trust</h2>
             
             <div class="article-image">
-                <img src="images/thumbnails/zooba-lab.jpg?v=3.8" alt="Zooba Lab Natural Fluoride-Free Toothpaste Amazon A+ Content">
+                <img src="images/thumbnails/zooba-lab.jpg?v=3.9" alt="Zooba Lab Natural Fluoride-Free Toothpaste Amazon A+ Content">
             </div>
 
             <div class="article-body">
@@ -804,7 +820,7 @@
             <h2 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">AI + Photoshop: The Future of Amazon Lifestyle Renders</h1>
             
             <div class="article-image">
-                <img src="images/thumbnails/blitz-ebc.jpg?v=3.7" alt="AI + Photoshop Lifestyle Renders">
+                <img src="images/thumbnails/blitz-ebc.jpg?v=3.9" alt="AI + Photoshop Lifestyle Renders">
             </div>
 
             <div class="article-body">
@@ -981,7 +997,66 @@
         </div>
     </div>
 
-        <!-- Featured Oasis Candles Case Study Modal -->
+            <!-- Featured Upwork $10K Milestone Modal -->
+    <div class="article-modal" id="article-milestone">
+        <div class="glass-card article-content">
+            <button class="close-article" onclick="closeArticle('article-milestone')">&times;</button>
+            <div class="blog-meta-info" style="margin-bottom: 20px;">
+                <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">Agency Milestone &bull; Upwork Top Rated</span>
+                <span style="color: var(--text-secondary);">October 18, 2026 &bull; 6 min read</span>
+            </div>
+            <h2 class="text-gradient" style="font-size: 2.2rem; margin-bottom: 25px; line-height: 1.3;">From $0 to $10,000+ on Upwork: What Scaling 25+ Amazon Brands Taught Us About Visual Conversion</h2>
+            
+            <div class="article-image">
+                <img src="images/thumbnails/upwork-10k-milestone.jpg?v=3.9" alt="Toufiq Creative $10,000+ Upwork Milestone">
+            </div>
+
+            <div class="article-body">
+                <p>When <strong>Toufiq Creative</strong> began offering dedicated Amazon Listing and A+ Content design services, our goal was never to simply provide standard graphic design. In the hyper-competitive Amazon marketplace, brands do not need decorative visuals—<strong>they need high-converting visual sales psychology that turns casual browsers into confident buyers</strong>.</p>
+
+                <p>Officially surpassing <strong>$10,000+ in verified client earnings on Upwork</strong> with a <strong>100% Job Success Score (JSS)</strong> is not just a personal achievement; it is a proven testament to the effectiveness of our visual conversion methodology. Looking back across 25+ international brands, here are the 5 core conversion principles that propelled this journey:</p>
+
+                <h3>1. Overcoming the "3-Second Mobile Rule"</h3>
+                <p>Over 70% of Amazon buyers purchase through mobile devices. Mobile shoppers rarely read lengthy bullet points. If your second and third infographics don't visually communicate the core value proposition, dimensions, and practical usage within 3 seconds, the shopper bounces to sponsored competitor ads. Every listing asset must be structured with bold, thumb-stopping hierarchy.</p>
+
+                <h3>2. Editorial Storytelling in A+ Content</h3>
+                <p>Traditional Amazon listings rely on generic feature lists. Top-tier brands win by creating immersive editorial brand experiences. From structuring 7-module brand story narratives for skincare leaders to developing comparison modules that answer customer objections before they occur, high-performing A+ Content systematically cuts customer return rates by up to 34%.</p>
+
+                <h3>3. Precision 3D & AI Synthesis</h3>
+                <p>Expensive physical photography shoots often leave brands with inflexible assets. By combining next-generation AI environmental generation with manual Photoshop retouching, we deliver photorealistic lifestyle scenes tailored to each product's exact demographic at a fraction of traditional production costs.</p>
+
+                <h3>4. High-Trust Clinical & Botanical Visuals</h3>
+                <p>Whether scaling natural oral care like Zooba Lab, premium skincare like Sombra and Strataderm, or organic bitters like Amenazel, modern buyers demand ingredient transparency. Visual breakdowns, certification badges, and clear benefit callouts build immediate buyer confidence.</p>
+
+                <h3>5. Long-Term Brand Partnerships</h3>
+                <p>Reaching this milestone was made possible by incredible brand founders, Amazon aggregators, and agency partners across the US, UK, Europe, and Asia who continue to trust Toufiq Creative with their product launches and catalog overhauls.</p>
+
+                <!-- Milestone Stats Box -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0;">
+                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 20px; border-radius: 12px; text-align: center;">
+                        <h4 style="font-size: 2rem; color: #10b981; margin: 0;">$10,000+</h4>
+                        <p style="margin: 5px 0 0 0; font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;">Verified Upwork Earnings</p>
+                    </div>
+                    <div style="background: rgba(255, 170, 0, 0.08); border: 1px solid rgba(255, 170, 0, 0.3); padding: 20px; border-radius: 12px; text-align: center;">
+                        <h4 style="font-size: 2rem; color: var(--accent); margin: 0;">100%</h4>
+                        <p style="margin: 5px 0 0 0; font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;">Job Success Score</p>
+                    </div>
+                    <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.3); padding: 20px; border-radius: 12px; text-align: center;">
+                        <h4 style="font-size: 2rem; color: #3b82f6; margin: 0;">25+</h4>
+                        <p style="margin: 5px 0 0 0; font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;">Global Brands Scaled</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 35px; padding-top: 25px; border-top: 1px solid var(--border);">
+                    <a href="https://agent.toufiqcreative.com" target="_blank" class="btn btn-secondary" style="margin-right: 10px;">Free AI Listing Audit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="/#contact" class="btn btn-primary">Start a New Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Featured Oasis Candles Case Study Modal -->
     <div class="article-modal" id="article-oasis">
         <div class="glass-card article-content">
             <button class="close-article" onclick="closeArticle('article-oasis')">&times;</button>
@@ -1069,6 +1144,6 @@
             document.body.style.overflow = 'auto';
         }
     </script>
-    <script src="app.js?v=3.5"></script>
+    <script src="app.js?v=3.9"></script>
 </body>
 </html>
