@@ -1439,6 +1439,48 @@ const initApp = () => {
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
         if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
 
+        const claimBtn = document.getElementById('celebration-claim-btn');
+        if (claimBtn) {
+            claimBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeModal();
+                
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Auto-select Consultation & Audit in dropdown
+                    const projectSelect = document.getElementById('project-type');
+                    if (projectSelect) {
+                        projectSelect.value = 'other';
+                    }
+                    
+                    // Pre-fill message intent
+                    const messageBox = document.getElementById('client-message');
+                    if (messageBox && !messageBox.value) {
+                        messageBox.value = 'Hello Toufiq, I would like to claim the 100% Free Amazon Listing & SEO Audit for my product.';
+                    }
+
+                    // Highlight and focus the contact form
+                    const contactFormCard = document.querySelector('.contact-form');
+                    if (contactFormCard) {
+                        contactFormCard.style.transition = 'all 0.5s ease';
+                        contactFormCard.style.boxShadow = '0 0 35px rgba(255, 170, 0, 0.45)';
+                        contactFormCard.style.borderColor = 'rgba(255, 170, 0, 0.8)';
+                        setTimeout(() => {
+                            contactFormCard.style.boxShadow = '';
+                            contactFormCard.style.borderColor = '';
+                        }, 2500);
+                    }
+
+                    const nameInput = document.getElementById('client-name');
+                    if (nameInput) {
+                        setTimeout(() => nameInput.focus(), 600);
+                    }
+                }
+            });
+        }
+
         overlay.addEventListener('click', (e) => {
             if (e.target === overlay) closeModal();
         });
