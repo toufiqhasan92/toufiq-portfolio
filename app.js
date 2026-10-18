@@ -1344,6 +1344,120 @@ const initApp = () => {
     // ==========================================
     // 12. Run Initializer
     // ==========================================
+    
+    // ==========================================
+    // 13. Celebration $10K Milestone Popup & Confetti
+    // ==========================================
+    const initCelebrationModal = () => {
+        const overlay = document.getElementById('celebration-overlay');
+        const closeBtn = document.getElementById('celebration-close-btn');
+        const dismissBtn = document.getElementById('celebration-dismiss-btn');
+        const canvas = document.getElementById('celebration-confetti-canvas');
+        if (!overlay || !canvas) return;
+
+        let animationFrameId = null;
+        let particles = [];
+
+        // Lightweight Confetti Generator
+        const runConfetti = () => {
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const colors = ['#f59e0b', '#fbbf24', '#10b981', '#3b82f6', '#ec4899', '#ffffff'];
+            particles = [];
+            const particleCount = window.innerWidth < 600 ? 50 : 90;
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * -canvas.height * 0.5,
+                    w: Math.random() * 8 + 4,
+                    h: Math.random() * 6 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    vx: (Math.random() - 0.5) * 3,
+                    vy: Math.random() * 3 + 2.5,
+                    rotation: Math.random() * 360,
+                    vRot: (Math.random() - 0.5) * 6,
+                    opacity: 1
+                });
+            }
+
+            const startTime = Date.now();
+            const duration = 4500; // 4.5 seconds confetti duration
+
+            const animate = () => {
+                const elapsed = Date.now() - startTime;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.rotation += p.vRot;
+
+                    if (elapsed > 3000) {
+                        p.opacity = Math.max(0, 1 - (elapsed - 3000) / 1500);
+                    }
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.opacity;
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    ctx.restore();
+                });
+
+                if (elapsed < duration) {
+                    animationFrameId = requestAnimationFrame(animate);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    cancelAnimationFrame(animationFrameId);
+                }
+            };
+
+            animate();
+        };
+
+        const showModal = () => {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            runConfetti();
+        };
+
+        const closeModal = () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            try {
+                sessionStorage.setItem('celebration_10k_shown', 'true');
+            } catch (e) {}
+        };
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Trigger after 1.8 seconds if not shown in current session
+        const alreadyShown = sessionStorage.getItem('celebration_10k_shown');
+        if (!alreadyShown) {
+            setTimeout(showModal, 1800);
+        }
+    };
+
+    initCelebrationModal();
+
     fetchProjects();
 };
 

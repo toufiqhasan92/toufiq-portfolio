@@ -1794,3 +1794,245 @@ textarea.form-input {
         flex-shrink: 0 !important;
     }
 }
+
+
+/* ==========================================
+   Celebration $10K Milestone Popup & Confetti
+   ========================================== */
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 8, 16, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.celebration-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#celebration-confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.celebration-card {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(145deg, rgba(20, 28, 48, 0.96), rgba(10, 15, 28, 0.98));
+    border: 1px solid rgba(255, 170, 0, 0.35);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 170, 0, 0.15);
+    border-radius: 24px;
+    max-width: 530px;
+    width: 100%;
+    padding: 35px 30px;
+    text-align: center;
+    transform: scale(0.85) translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.celebration-overlay.active .celebration-card {
+    transform: scale(1) translateY(0);
+}
+
+.celebration-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.celebration-close:hover {
+    background: rgba(255, 100, 100, 0.2);
+    color: #ff6b6b;
+    transform: rotate(90deg);
+}
+
+.celebration-icon-wrapper {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celebration-trophy-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 170, 0, 0.4) 0%, rgba(255, 170, 0, 0) 70%);
+    animation: trophyPulse 2.5s infinite alternate ease-in-out;
+}
+
+.celebration-icon {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(135deg, #ffaa00, #ff7700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: #0b0f19;
+    box-shadow: 0 8px 25px rgba(255, 170, 0, 0.4);
+}
+
+@keyframes trophyPulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    100% { transform: scale(1.3); opacity: 1; }
+}
+
+.celebration-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(20, 168, 0, 0.15);
+    border: 1px solid rgba(20, 168, 0, 0.4);
+    color: #22c55e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.celebration-title {
+    font-size: 1.95rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.celebration-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.celebration-gift-box {
+    background: rgba(255, 170, 0, 0.06);
+    border: 1px dashed rgba(255, 170, 0, 0.35);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.celebration-gift-box .gift-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.celebration-gift-box h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.celebration-gift-box p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin: 0;
+}
+
+.celebration-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.celebration-btn-claim {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(255, 170, 0, 0.3);
+    text-decoration: none;
+}
+
+.celebration-btn-dismiss {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+    padding: 5px;
+}
+
+.celebration-btn-dismiss:hover {
+    color: var(--text-primary);
+}
+
+.celebration-footer-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 576px) {
+    .celebration-card {
+        padding: 28px 18px;
+    }
+    .celebration-title {
+        font-size: 1.55rem;
+    }
+    .celebration-footer-proof {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .celebration-footer-proof span:nth-child(2),
+    .celebration-footer-proof span:nth-child(4) {
+        display: none;
+    }
+}
