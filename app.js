@@ -262,7 +262,7 @@ const initApp = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch('projects.csv');
+            const response = await fetch('projects.csv?v=' + Date.now(), { cache: 'no-store' });
             const dataText = await response.text();
             projectsData = parseCSV(dataText);
             
@@ -275,7 +275,7 @@ const initApp = () => {
             // Dynamically load listing page gallery if element exists
             const listingGrid = document.getElementById('listing-gallery-grid');
             if (listingGrid) {
-                const listings = projectsData.filter(p => p.Category.toLowerCase().includes('listing images'));
+                const listings = [...projectsData.filter(p => p.Category.toLowerCase().includes('listing images'))].reverse();
                 renderServiceGrid(listingGrid, listings);
             }
 
@@ -362,7 +362,18 @@ const initApp = () => {
                 const featured = featuredIds.map(id => projectsData.find(p => String(p.ID) === id)).filter(Boolean);
                 renderPortfolioGrid(featured.length > 0 ? featured : projectsData);
             } else {
-                const filtered = projectsData.filter(p => p.Category.toLowerCase().includes(filterValue.toLowerCase()));
+                let filtered = projectsData.filter(p => p.Category.toLowerCase().includes(filterValue.toLowerCase()));
+                if (filterValue.toLowerCase() === 'listing images' || filterValue.toLowerCase() === 'live projects') {
+                    const priority = ['40', '39', '36', '38', '34', '35', '37'];
+                    filtered = [...filtered].sort((a, b) => {
+                        const aIdx = priority.indexOf(String(a.ID));
+                        const bIdx = priority.indexOf(String(b.ID));
+                        if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+                        if (aIdx !== -1) return -1;
+                        if (bIdx !== -1) return 1;
+                        return Number(b.ID) - Number(a.ID);
+                    });
+                }
                 renderPortfolioGrid(filtered);
             }
         });
