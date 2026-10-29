@@ -267,7 +267,7 @@ const initApp = () => {
             projectsData = parseCSV(dataText);
             
             if (galleryGrid) {
-                const featuredIds = ["22", "25", "18", "23", "24", "15", "7", "14", "19"];
+                const featuredIds = ["36", "38", "34", "35", "37", "22", "25", "18", "23", "24", "15", "14", "19"];
                 const featured = featuredIds.map(id => projectsData.find(p => String(p.ID) === id)).filter(Boolean);
                 renderPortfolioGrid(featured.length > 0 ? featured : projectsData);
             }
@@ -358,7 +358,7 @@ const initApp = () => {
             const filterValue = btn.dataset.filter;
             if (filterValue === 'all') {
                 // Curated 9 Featured Works: 3 Best Listing (22, 25, 18), 4 Best A+ (23, 24, 15, 7), 2 Best Storefronts (14, 19)
-                const featuredIds = ["22", "25", "18", "23", "24", "15", "7", "14", "19"];
+                const featuredIds = ["36", "38", "34", "35", "37", "22", "25", "18", "23", "24", "15", "14", "19"];
                 const featured = featuredIds.map(id => projectsData.find(p => String(p.ID) === id)).filter(Boolean);
                 renderPortfolioGrid(featured.length > 0 ? featured : projectsData);
             } else {
