@@ -1445,7 +1445,7 @@ const initApp = () => {
                 cancelAnimationFrame(animationFrameId);
             }
             try {
-                sessionStorage.setItem('celebration_10k_shown', 'true');
+                sessionStorage.setItem('celebration_topratedplus_shown', 'true');
             } catch (e) {}
         };
 
@@ -1471,7 +1471,7 @@ const initApp = () => {
                     // Pre-fill message intent
                     const messageBox = document.getElementById('client-message');
                     if (messageBox && !messageBox.value) {
-                        messageBox.value = 'Hello Toufiq, I would like to claim the 100% Free Amazon Listing & SEO Audit for my product.';
+                        messageBox.value = 'Hello Toufiq, I would like to claim the 100% Free Amazon Listing & SEO Audit for my product (Top Rated Plus Milestone Celebration).';
                     }
 
                     // Highlight and focus the contact form
@@ -1505,7 +1505,7 @@ const initApp = () => {
         });
 
         // Trigger after 1.8 seconds if not shown in current session
-        const alreadyShown = sessionStorage.getItem('celebration_10k_shown');
+        const alreadyShown = sessionStorage.getItem('celebration_topratedplus_shown');
         if (!alreadyShown) {
             setTimeout(showModal, 1800);
         }
